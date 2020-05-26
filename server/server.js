@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise
 
 mongoose.connect(config.mongoURI, { useNewUrlParser: true, 
     useCreateIndex: true,         
-    useUnifiedTopology: true })
+    useUnifiedTopology: true },console.log('connected to the database'))
 
 
 mongoose.connection.on('error',() =>{
