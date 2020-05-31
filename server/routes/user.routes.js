@@ -15,7 +15,7 @@ router.delete(userCtrl.remove)
 
 
 
-router.param('userId',userCtrl.userById)
+router.param('userId', userCtrl.userById)
 
 
 export default router;
