@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const compress = require('compression');
 const mongoose = require('mongoose');
 
+const userRoutes = require('./routes/user.routes;')
 const app = express();
 
 
@@ -32,6 +33,9 @@ app.use(cookieParser())
 app.use(compress())
 app.use(helmet())
 app.use(cors())
+
+app.use('/', userRoutes
+)
 
 
 app.listen(config.port, (err) =>{
