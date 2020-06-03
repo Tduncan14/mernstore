@@ -9,9 +9,9 @@ router.post('/api.users', userCtrl.create);
 
 
 router.get('/api/users/:userId',
-userCtrl.read)
-router.put(userCtrl.update)
-router.delete(userCtrl.remove)
+authCtrl.requireSignin,userCtrl.read)
+router.put(authCtrl.requireSignin,authCtrl.hasAuthorization,userCtrl.update)
+router.delete(authCtrl.requireSignin, authCtrl.hasAuthorization,userCtrl.remove)
 
 
 
