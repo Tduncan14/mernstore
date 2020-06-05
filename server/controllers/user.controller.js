@@ -10,6 +10,7 @@ const create =  async (req,res) => {
     // user.name = req.body.name;
     // user.email = req.body.email
 
+
     try{
         await user.save()
        
