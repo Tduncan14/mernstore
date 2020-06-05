@@ -1,5 +1,5 @@
 const express = require('express');
-const authCtrl = require('/auth/signout');
+const authCtrl = require('../controllers/auth.controller');
 
 
 
@@ -12,4 +12,4 @@ router.get('/auth/signout',authCtrl.signout);
 
 
 
-module.exports = routers
+module.exports = router

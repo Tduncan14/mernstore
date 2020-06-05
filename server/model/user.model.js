@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const crypto = require('crypto');
 
 const UserSchema = new mongoose.Schema({
 
@@ -11,7 +12,7 @@ const UserSchema = new mongoose.Schema({
        type:String,
        trim:true,
        unique:'Email already exists',
-       match: [/.+\@.+\..+/, 'Please fill a valid email address'],
+       match:[/.+\@.+\..+/, 'Please fill a valid email address'],
        required:'Email is required'
     },
     created:{
@@ -74,16 +75,14 @@ UserSchema.methods = {
 }
 
 
-UserSchema.path('hashed_password').validate(function(v){
-
-    if(this._password && this._password.length < 6){
-        this.invalidate('password', 'Password must be at least 6 characters.')
+UserSchema.path('hashed_password').validate(function(v) {
+    if (this._password && this._password.length < 6) {
+      this.invalidate('password', 'Password must be at least 6 characters.')
     }
-
-    if(this.isNew && !this._password){
-        this.invalidate('password', 'Password is required')
+    if (this.isNew && !this._password) {
+      this.invalidate('password', 'Password is required')
     }
-},null)
+  }, null)
 
 
-module.exports('User',UserSchema)
+module.exports = mongoose.model('User',UserSchema)

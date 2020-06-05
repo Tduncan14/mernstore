@@ -1,5 +1,5 @@
 const User = require('../model/user.model');
-const extend = lodash('lodash/extend');
+const extend = require('lodash/extend');
 const errorHandler = require('./error.controller');
 
 
@@ -52,7 +52,7 @@ const list = async(req,res) => {
 
 }
 
-const userByID = (req,res,next,id) => {
+const userByID =  async (req,res,next,id) => {
 
   try{
 
@@ -99,7 +99,7 @@ const read =(req,res) => {
 
 
 
-const update =(req,res,next) => {
+const update = async(req,res,next) => {
 
    try{
 
@@ -128,7 +128,7 @@ const update =(req,res,next) => {
 
 }
 
-const remove = (req,res,next) => {
+const remove = async (req,res,next) => {
 
     try{
 

@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 
 
 const authRoutes = require('./routes/auth.routes');
-const userRoutes = require('./routes/user.routes;')
+const userRoutes = require('./routes/user.routes')
 
 
 const app = express();
