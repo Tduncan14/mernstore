@@ -8,15 +8,13 @@ import theme from './Theme';
 
 
 const App = () => {
+  return(
   <Router>
     <ThemeProvider theme={theme}>
       <MainRouter/>
     </ThemeProvider>
   </Router>
-
-
-
-
+  )
 
 }
 
