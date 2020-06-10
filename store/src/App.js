@@ -2,7 +2,7 @@ import React from 'react';
 import MainRouter from './MainRouter';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {ThemeProvider} from '@material-ui/styles';
-import theme from './Theme';
+import theme from './theme';
 
 
 
