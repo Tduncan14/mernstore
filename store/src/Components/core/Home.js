@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -7,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 
 import bikeImg from './../assets/images/bike.jpg';
 
-import theme from '../../Theme';
+import theme from '../../theme';
 
 
 
@@ -31,6 +32,7 @@ const useStyles = makeStyles(theme => ({
     const classes = useStyles()
       return (
        <Card className={classes.card}>
+         <Link to="/users">Users</Link>
           <Typography variant="h6" className={classes.title}>
             Home Page
           </Typography>
